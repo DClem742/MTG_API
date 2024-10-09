@@ -37,7 +37,4 @@ def add_card_to_collection(collection_id: int, card_id: int, quantity: int = 1, 
     session.commit()
     return {"message": "Card added to collection successfully"}
 
-@app.get("/colors")
-def get_colors(session: Session = Depends(get_session)):
-    colors = session.exec(select(colors)).all()
-    return colors
+
