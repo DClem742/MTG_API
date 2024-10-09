@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, create_engine, Session
-from models import cards, colors, card_colors, collections, collection_cards
+from models import cards, collections, collection_cards
 DATABASE_URL = "postgresql://postgres.bveaeajkjyrnfjvhctcx:Sumerian5588!*@aws-0-us-west-1.pooler.supabase.com:6543/postgres"
 
 engine = create_engine(DATABASE_URL, echo=True)

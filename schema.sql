@@ -14,28 +14,9 @@ CREATE TABLE cards (
     rarity TEXT,
     set_code TEXT,
     collector_number TEXT,
-    -- image_url TEXT
+    colors TEXT
 );
 
--- Stores color information
--- Simple table with just 'id' and 'color' columns
--- Used to represent the five colors of Magic: The Gathering
-
-CREATE TABLE colors (
-    id SERIAL PRIMARY KEY,
-    color TEXT NOT NULL
-);
-
--- Junction table for the many-to-many relationship between cards and colors
--- Links cards to their respective colors
--- Uses composite primary key of card_id and color_id
-
-
-CREATE TABLE card_colors (
-    card_id INTEGER REFERENCES cards(id),
-    color_id INTEGER REFERENCES colors(id),
-    PRIMARY KEY (card_id, color_id)
-);
 
 -- Represents user-created collections of cards
 -- Contains 'id', 'user_id', and 'name' columns

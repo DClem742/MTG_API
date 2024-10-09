@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from sqlmodel import Session, select
 from database import get_session
-from models import cards, colors, collections, collection_cards
+from models import cards, collections, collection_cards
 
 app = FastAPI()
 

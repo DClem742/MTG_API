@@ -1,30 +1,12 @@
 -- Insert sample cards
-INSERT INTO cards (name, mana_cost, cmc, type_line, oracle_text, power, toughness, rarity, set_code, collector_number)
+INSERT INTO cards (name, mana_cost, cmc, type_line, oracle_text, power, toughness, rarity, set_code, collector_number, colors)
 VALUES
-('Lightning Bolt', '{R}', 1, 'Instant', 'Lightning Bolt deals 3 damage to any target.', NULL, NULL, 'common', 'M10', '146'),
-('Serra Angel', '{3}{W}{W}', 5, 'Creature — Angel', 'Flying, vigilance', '4', '4', 'uncommon', 'DOM', '33'),
-('Demonic Tutor', '{1}{B}', 2, 'Sorcery', 'Search your library for a card, put that card into your hand, then shuffle.', NULL, NULL, 'rare', 'DMR', '46'),
-('Birds of Paradise', '{G}', 1, 'Creature — Bird', '{T}: Add one mana of any color.', '0', '1', 'rare', 'M12', '165'),
-('Counterspell', '{U}{U}', 2, 'Instant', 'Counter target spell.', NULL, NULL, 'uncommon', 'DMR', '457');
-
--- Insert colors
-INSERT INTO colors (color)
-VALUES 
-('White'),
-('Blue'),
-('Black'),
-('Red'),
-('Green');
-
--- Link cards to colors
-INSERT INTO card_colors (card_id, color_id)
-VALUES 
-(1, 4),  -- Lightning Bolt is Red
-(2, 1),  -- Serra Angel is White
-(3, 3),  -- Demonic Tutor is Black
-(4, 5),  -- Birds of Paradise is Green
-(5, 2);  -- Counterspell is Blue
-
+('Lightning Bolt', '{R}', 1, 'Instant', 'Lightning Bolt deals 3 damage to any target.', NULL, NULL, 'common', 'M10', '146', 'Red'),
+('Serra Angel', '{3}{W}{W}', 5, 'Creature — Angel', 'Flying, vigilance', '4', '4', 'uncommon', 'DOM', '33', 'White'),
+('Demonic Tutor', '{1}{B}', 2, 'Sorcery', 'Search your library for a card, put that card into your hand, then shuffle.', NULL, NULL, 'rare', 'DMR', '46', 'Black'),
+('Birds of Paradise', '{G}', 1, 'Creature — Bird', '{T}: Add one mana of any color.', '0', '1', 'rare', 'M12', '165', 'Green'),
+('Counterspell', '{U}{U}', 2, 'Instant', 'Counter target spell.', NULL, NULL, 'uncommon', 'DMR', '457', 'Blue'),
+('Nicol Bolas, Dragon-God', '{U}{B}{B}{B}{R}', 5, 'Legendary Planeswalker — Bolas', 'Nicol Bolas, Dragon-God has all loyalty abilities of all other planeswalkers on the battlefield.', NULL, NULL, 'mythic', 'WAR', '207', 'Blue,Black,Red');
 -- Create a sample collection
 INSERT INTO collections (user_id, name)
 VALUES (1, 'My First Collection');
@@ -37,3 +19,4 @@ VALUES
 (1, 3, 2, false),  -- 2 non-foil Demonic Tutors
 (1, 4, 1, true),   -- 1 foil Birds of Paradise
 (1, 5, 3, false);  -- 3 non-foil Counterspells
+(1, 6, 1, true);  -- 1 foil Nicol Bolas, Dragon-God
